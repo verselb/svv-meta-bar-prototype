@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Selber Wölfe Top Bar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="app.css" />
+
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div class="svv-meta-bar svv-meta-bar--scroll-right">
+    <div class="svv-meta-bar__container">
+        <ul class="svv-meta-bar__items">
+            <li class="svv-meta-bar__item svv-meta-bar__item--active">
+                <a class="svv-meta-bar__button" href="https://www.selberwoelfe.de/" target="_blank">
+                    <img src="/img/selber-woelfe-logo.svg" alt="Selber Wölfe Logo">
+                    <span>Selber Wölfe</span>
+                </a>
+            </li>
+            <li class="svv-meta-bar__item">
+                <a class="svv-meta-bar__button" href="https://www.verselb.de/" target="_blank">
+                    <img src="/img/ver-selb-logo.svg" alt="VER Selb Logo">
+                    <span>VER Selb</span>
+                </a>
+            </li>
+            <li class="svv-meta-bar__item">
+                <a class="svv-meta-bar__button" href="https://www.verselb.de/" target="_blank">
+                    <img src="/img/selber-woelfe-juniors-logo.svg" alt="Selber Wölfe Juniors Logo">
+                    <span><span class="svv-meta-bar__nobr">Selber Wölfe</span> Juniors</span>
+                </a>
+            </li>
+            <li class="svv-meta-bar__item">
+                <a class="svv-meta-bar__button" href="https://www.vorium-selb.de/" target="_blank">
+                    <img src="/img/vorium-white-logo.svg" alt="VORIUM Logo">
+                    <span>VORIUM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="page-frame">
+    <iframe src="https://www.selberwoelfe.de/" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<script>
+    const metaBar = document.querySelector('.svv-meta-bar');
+    const container = document.querySelector('.svv-meta-bar__container');
+
+    const cssScrollClassLeft = 'svv-meta-bar--scroll-left';
+    const cssScrollClassRight = 'svv-meta-bar--scroll-right';
+
+    container.addEventListener('scroll', () => {
+        if (container.scrollLeft > 5) {
+            metaBar.classList.add(cssScrollClassLeft);
+            metaBar.classList.remove(cssScrollClassRight);
+        } else {
+            metaBar.classList.remove(cssScrollClassLeft);
+            metaBar.classList.add(cssScrollClassRight);
+        }
+    });
+</script>
+
+</body>
+</html>

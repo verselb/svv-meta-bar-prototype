@@ -1,0 +1,176 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.svv-meta-bar {
+    background-color: var(--svv-meta-bar-background-color, #8B0E13);
+    position: relative;
+}
+
+.svv-meta-bar::before,
+.svv-meta-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.svv-meta-bar::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(139, 14, 19, 1) 0%, rgba(139, 14, 19, 0) 100%);
+}
+
+.svv-meta-bar::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(139,14,19,1) 0%, rgba(139,14,19,0) 100%);
+}
+
+.svv-meta-bar--scroll-left::before {
+    opacity: 1;
+}
+
+.svv-meta-bar--scroll-right::after {
+    opacity: 1;
+}
+
+.svv-meta-bar__container {
+    display: flex;
+    justify-content: flex-start;
+    overflow: auto;
+}
+
+.svv-meta-bar__items {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    height: 45px;
+    gap: 2px;
+}
+
+.svv-meta-bar__item {
+    display: flex;
+}
+
+.svv-meta-bar__button {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    background-color: var(--svv-meta-bar-button-background-color, #B50013);
+    color: var(--svv-meta-bar-button-color, #ffffff);
+    text-decoration: none;
+    font-weight: 700;
+    gap: 8px;
+    font-size: 10px;
+    line-height: 1;
+}
+
+.svv-meta-bar__item--active {
+    --svv-meta-bar-button-background-color: #E30613;
+}
+
+.svv-meta-bar--light {
+    --svv-meta-bar-background-color: #F5F5F5;
+}
+
+@media (min-width: 425px) {
+    .svv-meta-bar__button {
+        font-size: 12px;
+    }
+
+    .svv-meta-bar__nobr {
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 768px) {
+    .svv-meta-bar__container {
+        padding: 0 28px;
+        justify-content: flex-end;
+    }
+
+    .svv-meta-bar__button {
+        padding: 5px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .svv-meta-bar__container {
+        padding: 0 48px;
+    }
+
+    .svv-meta-bar__button {
+        font-size: 16px;
+    }
+}
+
+.page-frame {
+    width: 100%;
+    height: 5000px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-frame1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(180deg, rgba(227,6,19,1) 0%, rgba(227,6,19,0) 100%);
+    z-index: 50;
+}
+
+.page-frame iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * Meta Bar
+ * ----------------------------------------------------------------------------
+ */
+
+#header-outer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(180deg, rgba(227,6,19,1) 0%, rgba(227,6,19,0) 100%);
+    z-index: 50;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+#header-outer.side-widget-open::before {
+    opacity: 0;
+}
+
+@media (min-width: 690px) {
+    #header-outer::before {
+        height: 45px;
+    }
+}
+
+@media (min-width: 1000px) {
+    #header-outer::before {
+        height: 100px;
+    }
+}
+
+/*
+@media (min-width: 690px) {}
+@media (min-width: 1000px) {}
+@media (min-width: 1300px) {}
+ */
