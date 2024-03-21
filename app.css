@@ -67,6 +67,12 @@ body {
     gap: 8px;
     font-size: 10px;
     line-height: 1;
+    transition: background-color 0.3s ease;
+}
+
+.svv-meta-bar__item:not(.svv-meta-bar__item--active) .svv-meta-bar__button:hover,
+.svv-meta-bar__item:not(.svv-meta-bar__item--active) .svv-meta-bar__button:focus {
+    background-color: var(--svv-meta-bar-button-hover-background-color, #D3000E);
 }
 
 .svv-meta-bar__item--active {
