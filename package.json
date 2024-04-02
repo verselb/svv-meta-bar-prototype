@@ -4,6 +4,7 @@
     "start": "parcel index.html"
   },
   "devDependencies": {
+    "@parcel/transformer-jsonld": "^2.12.0",
     "parcel": "^2.12.0"
   }
 }
